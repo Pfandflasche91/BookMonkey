@@ -8,7 +8,7 @@ export class BookStoreService {
   private books: Book[] = []
 
   constructor() {
-    this.book = [
+    this.books = [
       {
         isbn: '12345',
         title: 'Tierisch gut kochen',
@@ -32,5 +32,8 @@ export class BookStoreService {
 
   getAll(): Book[]{
     return this.books;
+  }
+  getSingle(isbn: string):Book| undefined{
+    return this.books.find(book=> book.isbn === isbn);
   }
 }
